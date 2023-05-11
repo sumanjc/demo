@@ -25,7 +25,19 @@ db_con.connect(function(err) {
     throw err
   }else{
     console.log("server connected with mysql db");
+    var data_from_db = db_con.query('SELECT * FROM component', (err, result) => {
+      if (err) {
+        console.log("data_from_db error: ", err);
+      } else {
+    
+        console.log("data_from_db", result, data_from_db);    
+        
+    
+      }
+    })
   }
   
 	
 });
+
+
